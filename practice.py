@@ -6,9 +6,8 @@ go below this docstring.
 
 PART ONE:
 
-    >>> def hello_world():
-
-    "Hello World"
+    >>> hello_world()
+    Hello World
 
     >>> say_hi("Balloonicorn")
     Hi Balloonicorn
@@ -67,7 +66,7 @@ PART TWO:
 
 
 def hello_world():
-    """ Prints 'Hello World' """
+    """ Returns 'Hello World' """
 
     print "Hello World"
 
@@ -105,6 +104,7 @@ def is_divisible_by_three(num1):
     """ Takes an integer and returns a boolean (True or False), depending on
     whether the number is evenly divisible by 3. """
 
+    # check if divisible by 3
     if num1 % 3 == 0:
         return True
     else:
@@ -114,6 +114,7 @@ def is_divisible_by_three(num1):
 def num_spaces(sentence):
     """ Takes a sentence as one string, returns the number of spaces. """
 
+    # running total of number of spaces
     number_of_spaces = 0
 
     for character in sentence:
@@ -123,8 +124,53 @@ def num_spaces(sentence):
     return number_of_spaces
 
 
-def total_meal_price(price, tip_percentage):
-    """ """
+def total_meal_price(price, tip_percentage=0.15):
+    """ Returns price of total meal by multipying price and tip percentage with
+    price. """
+
+    total_amount_paid = price + (price * tip_percentage)
+    return total_amount_paid
+
+
+def sign_and_parity(num1):
+    """Takes in integer, returns a list of two items (Positive/Negative,
+        Even/Odd)."""
+
+    result = []
+
+    # check if number is - or +
+    if num1 > 0 or num1 == 0:
+        result.append("Positive")
+    else:
+        result.append("Negative")
+
+    # check if number is divisible by 2 (aka even)
+    if num1 % 2 == 0:
+        result.append("Even")
+    else:
+        result.append("Odd")
+
+    return result
+
+# example
+result = sign_and_parity(3)
+
+if result[1] == "Even":
+    sign = result
+else:
+    parity = result
+
+
+def full_title(name, job_title="Engineer"):
+    """ Takes in string name and string job title and prints both. """
+
+    return "{} {}".format(job_title, name)
+
+
+def write_letter(recipient_name, job_title, sender_name):
+    """ Given a recipient name & job title and a sender name, print letter. """
+
+    print "Dear {}, I think you are amazing! Sincerely, {}".format(full_title(recipient_name, job_title), "Balloonicorn")
 
 ###############################################################################
 
