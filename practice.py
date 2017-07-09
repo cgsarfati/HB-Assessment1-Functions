@@ -6,8 +6,9 @@ go below this docstring.
 
 PART ONE:
 
-    >>> hello_world()
-    Hello World
+    >>> def hello_world():
+
+    "Hello World"
 
     >>> say_hi("Balloonicorn")
     Hi Balloonicorn
@@ -64,13 +65,73 @@ PART TWO:
 
 """
 
+
+def hello_world():
+    """ Prints 'Hello World' """
+
+    print "Hello World"
+
+
+def say_hi(name):
+    """ Prints 'Hi Balloonicorn' """
+
+    print "Hi {}".format(name)
+
+
+def print_product(int1, int2):
+    """ Multiplies two integers and prints result """
+
+    print int1 * int2
+
+
+def repeat_string(word, num1):
+    """ Prints a string multiplied by value of num1 """
+
+    print word * num1
+
+
+def print_sign(num1):
+    """ Prints evaluation of integer to be higher/lower/equal to 0 """
+
+    if num1 > 0:
+        print "Higher than 0"
+    elif num1 < 0:
+        print "Lower than 0"
+    else:
+        print "Zero"
+
+
+def is_divisible_by_three(num1):
+    """ Takes an integer and returns a boolean (True or False), depending on
+    whether the number is evenly divisible by 3. """
+
+    if num1 % 3 == 0:
+        return True
+    else:
+        return False
+
+
+def num_spaces(sentence):
+    """ Takes a sentence as one string, returns the number of spaces. """
+
+    number_of_spaces = 0
+
+    for character in sentence:
+        if character == " ":
+            number_of_spaces += 1
+
+    return number_of_spaces
+
+
+def total_meal_price(price, tip_percentage):
+    """ """
+
 ###############################################################################
 
 # PART ONE
 
 # 1. Write a function called 'hello_world' that does not take any arguments and
 #    prints "Hello World".
-
 
 # 2. Write a function called 'say_hi' that takes a name as a string and
 #    prints "Hi" followed by the name.
